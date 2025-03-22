@@ -13,13 +13,16 @@ def caesar(original_text, shift_amount, cipher_direction):
         shift_amount *= -1
 
     for letter in original_text:
-        letter_index = alphabet.index(letter)
-        index_shift = letter_index + shift_amount
-
-        # Ensure index remains within list limit
-        # index_shift = (char_index + or - shift_amount) % len(alphabet)
-        index_shift %= len(alphabet)
-        output_text += alphabet[index_shift]
+        if letter not in alphabet:
+            output_text += letter
+        else:
+            letter_index = alphabet.index(letter)
+            index_shift = letter_index + shift_amount
+    
+            # Ensure index remains within list limit
+            # index_shift = (char_index + or - shift_amount) % len(alphabet)
+            index_shift %= len(alphabet)
+            output_text += alphabet[index_shift]
     print(f"Here is your {cipher_direction}d text: {output_text}")
 
 caesar(text, shift, direction)
