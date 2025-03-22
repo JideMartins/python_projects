@@ -4,27 +4,21 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-def encrypt(original_text, shift_amount):
-    encoded_text = ""
-    for char in original_text:
-        char_index = alphabet.index(char)
 
-        # To avoid IndexOutOfRange error
-        index_shift = (char_index + shift_amount) % len(alphabet)
+# Combine both the encrypt and decrypt functions
+def caesar(original_text, shift_amount):
+    output_text = ""
+    for letter in original_text:
+        letter_index = alphabet.index(letter)
 
-        encoded_text += alphabet[index_shift]
-    print(f"original text: {original_text}")
-    print(f"encrypted text is {encoded_text}")
+        if direction== "encode":
+            index_shift = letter_index + shift_amount
+        else:
+            index_shift = letter_index - shift_amount
+        # Ensure index remains within list limit
+        # index_shift = (char_index + or - shift_amount) % len(alphabet)
+        index_shift %= len(alphabet)
+        output_text += alphabet[index_shift]
+    print(f"Output: {output_text}")
 
-encrypt(text, shift)
-
-# Define decrypt function
-def encrypt(original_text, shift_amount):
-    decoded_text = ""
-    for char in original_text:
-        char_index = alphabet.index(char)
-        index_shift = (char_index - shift_amount) % len(alphabet)
-
-        decoded_text += alphabet[index_shift]
-    print(f"original text: {original_text}")
-    print(f"decrypted text is {decoded_text}")
+caesar(text, shift)
