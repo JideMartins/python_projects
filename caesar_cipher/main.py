@@ -17,3 +17,14 @@ def encrypt(original_text, shift_amount):
     print(f"encrypted text is {encoded_text}")
 
 encrypt(text, shift)
+
+# Define decrypt function
+def encrypt(original_text, shift_amount):
+    decoded_text = ""
+    for char in original_text:
+        char_index = alphabet.index(char)
+        index_shift = (char_index - shift_amount) % len(alphabet)
+
+        decoded_text += alphabet[index_shift]
+    print(f"original text: {original_text}")
+    print(f"decrypted text is {decoded_text}")
