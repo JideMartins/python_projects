@@ -8,11 +8,11 @@ def encrypt(original_text, shift_amount):
     encoded_text = ""
     for char in original_text:
         char_index = alphabet.index(char)
-        
+
         # To avoid index of range error
         index_shift = (char_index + shift_amount) % len(alphabet)
 
         encoded_text += alphabet[index_shift]
-    print(encoded_text)
+    print(f"original text: {original_text}")
 
 encrypt(text, shift)
