@@ -23,8 +23,6 @@ def encrypt(original_text, shift_amount):
     decoded_text = ""
     for char in original_text:
         char_index = alphabet.index(char)
-
-        # To avoid index of range error
         index_shift = (char_index - shift_amount) % len(alphabet)
 
         decoded_text += alphabet[index_shift]
