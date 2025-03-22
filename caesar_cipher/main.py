@@ -11,6 +11,6 @@ def encrypt(original_text, shift_amount):
         index_shift = (char_index + shift_amount) % len(alphabet)
 
         encoded_text += alphabet[index_shift]
-    print(encoded_text)
+    print(f"encrypted text is {encoded_text}")
 
 encrypt(text, shift)
