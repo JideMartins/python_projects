@@ -9,7 +9,7 @@ def encrypt(original_text, shift_amount):
     for char in original_text:
         char_index = alphabet.index(char)
 
-        # To avoid index of range error
+        # To avoid IndexOutOfRange error
         index_shift = (char_index + shift_amount) % len(alphabet)
 
         encoded_text += alphabet[index_shift]
