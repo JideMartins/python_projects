@@ -1,3 +1,8 @@
+from ascii import logo
+
+print(logo)
+
+
 # Combine both the encrypt and decrypt functions
 def caesar(original_text, shift_amount, cipher_direction):
     output_text = ""
@@ -34,7 +39,7 @@ while loop_code:
     caesar(text, shift, direction)
 
     yes_or_no = input(
-        "Type \"yes\" if you want to go again or \"n\" if you want to end program\n").lower()
+        "Type \"yes\" if you want to go again or \"no\" if you want to end program\n").lower()
 
     if yes_or_no == "no":
         loop_code = False
