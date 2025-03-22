@@ -5,4 +5,10 @@ text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
 def encrypt(original_text, shift_amount):
-    pass
+    encoded_text = ""
+    for char in original_text:
+        char_index = alphabet.index(char)
+        index_shift = (char_index + shift_amount) % len(alphabet)
+
+        encoded_text += alphabet[index_shift]
+    return encoded_text
