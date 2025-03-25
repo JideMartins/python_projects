@@ -5,6 +5,7 @@ print(logo)
 
 # define function
 
+
 def auction():
     # declare empty dict
     bid = {}
@@ -25,7 +26,6 @@ def auction():
         other_bidders = input(
             "Are there other bidders? Type \"y\" for yes and \"n\" for no: ").lower()
 
-        
         if other_bidders == "n":
             continue_bid = False
             # Get max price and key
@@ -35,13 +35,13 @@ def auction():
             # convert bid values to list
             max_count = list(bid.values()).count(max_price)
 
-
             if max_count == 1:
                 print(f"The winner is {max_name} with a bid of ${max_price}")
                 # return bid
             elif max_count >= 2:
                 # state the value and run the silent auction again
-                print(f"\nThe maximum bid is tied, we would have to start all over\nFeel free to change your bid price")
+                print(
+                    f"\nThe maximum bid is tied, we would have to start all over\nFeel free to change your bid price")
                 bid = {}
 
                 # restart loop
@@ -51,7 +51,8 @@ def auction():
             print(
                 "please type the appropriate response: \"y\" for yes and \"n\" for no: ")
             other_bidders
-        else: continue_bid = True
+        else:
+            continue_bid = True
 
 
 # run function
