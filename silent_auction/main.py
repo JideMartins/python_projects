@@ -22,8 +22,10 @@ def auction():
         elif other_bidders == "y":
             continue
         else:
-            print("please type the appropriate response: \"y\" for yes and \"n\" for no: ")
+            print(
+                "please type the appropriate response: \"y\" for yes and \"n\" for no: ")
             other_bidders
+
 
 # run function
 auction()
@@ -40,7 +42,6 @@ if max_count >= 2:
     print(f"The maximum bid is tied, we would have to start all over\nFeel free to change your bid price")
     # run function again
     auction()
-elif max_count==1:
+elif max_count == 1:
     print(f"The winner is {max_name} with a bid of ${max_price}")
     # return bid
-
