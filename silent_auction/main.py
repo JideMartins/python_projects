@@ -1,3 +1,7 @@
+from gavel import logo
+
+print(logo)
+
 bid = {}
 
 
