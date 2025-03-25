@@ -20,7 +20,7 @@ while continue_bid:
     if other_bidders == "n":
         continue_bid = False
 
-    print(bid)
+    # print(bid)
 
 
 # Get max price and key
